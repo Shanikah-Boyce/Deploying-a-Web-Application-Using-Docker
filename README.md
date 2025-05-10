@@ -59,7 +59,7 @@ A significant hurdle I faced was related to nested virtualization. My system cou
 This workaround allowed Docker to function correctly and enabled me to proceed with development and deployment without further issues.
 
 ## Time Investment
-I completed the core tasks of this project—containerization, local testing, and cloud deployment—in about one hour. Most of the time was spent troubleshooting the virtualization problem, but the overall workflow was efficient thanks to Docker’s and AWS’s user-friendly tooling.
+I completed the core tasks of this project (containerization, local testing, and cloud deployment) in about one hour. Most of the time was spent troubleshooting the virtualization problem, but the overall workflow was efficient thanks to Docker’s and AWS’s user-friendly tooling.
 
 ## Key Takeaways
 - Docker provides a seamless way to package and deploy applications across environments.
