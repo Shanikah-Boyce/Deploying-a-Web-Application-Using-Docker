@@ -1,33 +1,33 @@
 # Deploying-a-Web-Application-Using-Docker
-![image](https://github.com/user-attachments/assets/96f0ecb0-a4ca-4656-b371-e5d9cc42beec)
-
 ## What is Docker?
 Docker is a powerful platform that simplifies application deployment by packaging software and its dependencies into lightweight, portable containers. These containers ensure consistency across various environments, from local development machines to cloud-based servers, making them an essential tool for modern software deployment.
+![image](https://github.com/user-attachments/assets/96f0ecb0-a4ca-4656-b371-e5d9cc42beec)
 
 ## Project Overview
 In this project, I containerized a simple web application using Docker and deployed it to the cloud using AWS Elastic Beanstalk. The process involved:
-•	Writing a custom Dockerfile
-•	Building a Docker image
-•	Running it locally
-•	Deploying it to a cloud-based environment with minimal friction
+- Writing a custom Dockerfile
+- Building a Docker image
+- Running it locally
+- Deploying it to a cloud-based environment with minimal friction
+
 By leveraging Docker’s capabilities, I achieved a streamlined deployment pipeline that is both scalable and efficient.
 
 ## Why Use Docker?
 Containers are lightweight, standalone software packages that include everything needed for an application to run, such as code, libraries, and tools. They are faster and more efficient than traditional virtual machines because they share the host system's kernel.
 
 Docker simplifies container management with several key components:
-•	Docker Engine (daemon) – The background service that builds, runs, and manages containers.
-•	Docker CLI & API – Command-line tools and programmatic interfaces for interacting with Docker.
-•	Docker Desktop – A user-friendly GUI for managing containers, images, and volumes locally, especially useful for development and testing.
+- Docker Engine (daemon) – The background service that builds, runs, and manages containers.
+- Docker CLI & API – Command-line tools and programmatic interfaces for interacting with Docker.
+- Docker Desktop – A user-friendly GUI for managing containers, images, and volumes locally, especially useful for development and testing.
 
 ## Project Breakdown
 ### Running a Prebuilt Nginx Container
 To get started, I experimented with a basic Nginx container to understand Docker’s core functionality: `docker run -d -p 80:80 nginx`
-This command launched an Nginx server accessible via http://localhost, serving its default welcome page.
+This command launched a Nginx server accessible via http://localhost, serving its default welcome page.
 ![image](https://github.com/user-attachments/assets/58f55b3e-d8af-418a-98cd-de51c289bda6)
 
 ## Creating a Custom Docker Image
-Next, I built a custom Docker image within that served a personalized HTML page using Nginx.
+Next, I built a custom Docker image within Dockerfile that served a personalized HTML page using Nginx.
 ![image](https://github.com/user-attachments/assets/65f8c0e6-00b0-48c0-8e98-52722607f167)
 
 The Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. It's essentially a script of instructions for Docker to build a container image. My Dockerfile tells Docker 3 things: 
