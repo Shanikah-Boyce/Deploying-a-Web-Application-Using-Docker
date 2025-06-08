@@ -40,17 +40,17 @@ An existing container was already using port 80, so I stopped it using Docker De
 
 ## Deploying the Containerized Application with AWS Elastic Beanstalk
 
-After successfully running the custom container locally, the next step involved deployment using AWS Elastic Beanstalk. This service significantly simplifies the management of containerized applications, offering support for Docker, automatic resource adjustment, and rapid deployment with minimal configuration.
+After successfully running the custom container locally, the next step was to deploy it using AWS Elastic Beanstalk. This service makes managing containerized applications a lot easier, providing support for Docker, automatic resource scaling, and quick deployment with minimal setup.
 
-To begin, an Elastic Beanstalk environment was configured with default settings. The application was named "NextWork App," and Docker was chosen as the platform, allowing Elastic Beanstalk to automatically determine the correct branch and version. Before uploading the application, the `index.html` file was updated to display a confirmation message, verifying a successful deployment.
+To kick things off, an Elastic Beanstalk environment was set up with the default settings. The app was named "NextWork App," and Docker was selected as the platform, which allowed Elastic Beanstalk to automatically figure out the right branch and version. Before uploading the app, the index.html file was updated to show a confirmation message, confirming a successful deployment.
 
-A ZIP file containing both the `Dockerfile` and the updated `index.html` was created and uploaded to Elastic Beanstalk, labeled as "Version One." For this initial deployment and to remain within the free tier, the Single instance preset was selected, which is ideal for testing purposes.
+A ZIP file that included both the Dockerfile and the updated index.html was created and uploaded to Elastic Beanstalk, tagged as "Version One." For this first deployment and to stay within the free tier, the Single instance preset was chosen, which is perfect for testing.
 
-For service access, a new IAM service role was generated, and `ecsInstanceRole` was chosen to grant the necessary permissions to the EC2 instance. In the networking section, the Public IP option was activated, while the default Virtual Private Cloud (VPC) settings were retained.
+To access the service, a new IAM service role was created, and ecsInstanceRole was selected to provide the necessary permissions to the EC2 instance. In the networking section, the Public IP option was turned on, while the default Virtual Private Cloud (VPC) settings were kept.
 
-On the configuration page, General Purpose 3 (SSD) was selected for the root volume, with a size of 10GB. IMDSv1 was deactivated since the application did not require access to other AWS services. Basic monitoring was enabled, and managed updates were disabled given the temporary nature of the project.
+On the configuration page, General Purpose 3 (SSD) was picked for the root volume, sized at 10GB. IMDSv1 was turned off since the application didn’t need access to other AWS services. Basic monitoring was turned on, and managed updates were disabled due to the temporary nature of the project.
 
-The default "All at once" deployment strategy was used to ensure a swift setup. After reviewing all selections, the Elastic Beanstalk setup was finalized. Within minutes, the application was live and accessible.
+The default "All at once" deployment strategy was chosen to ensure a quick setup. After going through all the selections, the Elastic Beanstalk setup was completed. Within minutes, the application was live and ready to use.
 
 ![image](https://github.com/user-attachments/assets/a32a5771-63ee-4842-a3cf-ca1e05561f32)
 
