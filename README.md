@@ -25,35 +25,32 @@ Next, I created a custom Dockerfile to serve a personalized HTML page through Ng
 
 I then built the image with: `docker build -t my-web-app .` The `.` tells Docker to look for the Dockerfile in the current directory. Once built, I ran: `docker run -d -p 80:80 my-web-app`.
 An existing container was already using port 80, so I stopped it using Docker Desktop. After that, my custom page loaded successfully in the browser:
-
-## Running the Custom Image
-To run the image, I used:
-docker run -d -p 80:80 my-web-app
-Initially, I encountered a port conflict because another container was using port 80. Using Docker Desktop, I identified and stopped the conflicting container, then successfully started mine. The custom page displayed "Welcome to My First Custom Docker Image!" at http://localhost.
 ![image](https://github.com/user-attachments/assets/8dab65f6-6b40-4df0-8a3c-f457820883e3)
 
-## Cloud Deployment with AWS Elastic Beanstalk
-To deploy my containerized app to the cloud, I used AWS Elastic Beanstalk, a Platform-as-a-Service (PaaS) that simplifies cloud application management. Here's what made it ideal:
-- Native Docker support
-- Automatic environment provisioning
-- Scalable infrastructure without manual configuration
+## Taking It to the Cloud: AWS Elastic Beanstalk
+With the custom container working locally, I deployed it using AWS Elastic Beanstalk, a platform-as-a-service that automates infrastructure provisioning and deployment for containerized applications.
 
-After using a Dockerfile to locally build my image, I uploaded it to AWS Elastic Beanstalk. Within minutes, my application was live in a production-ready environment, fully managed and optimized for scaling.
+What made Elastic Beanstalk ideal:
+- Built-in support for Docker containers
+- Automated provisioning and scaling
+- Fast setup for production environments
+
+Deployment was straightforward. After uploading the Docker image, the platform handled the rest. Within minutes, the app was live and accessible on the internet.
 ![image](https://github.com/user-attachments/assets/a32a5771-63ee-4842-a3cf-ca1e05561f32)
 
-## Unexpected Challenge: Virtualization Issues
-A significant hurdle I faced was related to nested virtualization. My system could not support KVM when running Docker inside a virtual machine, leading to persistent errors. To resolve this:
-1.	I installed Ubuntu directly on my machine.
-2.	I set up Docker Desktop via Windows Subsystem for Linux (WSL).
-This workaround allowed Docker to function correctly and enabled me to proceed with development and deployment without further issues.
+## Troubleshooting: Virtualization Woes
+One challenge I faced was nested virtualization. Running Docker inside a virtual machine caused KVM errors and made containers fail to start.
 
-## Time Investment
-I completed the core tasks of this project (containerization, local testing, and cloud deployment) in about one hour. Most of the time was spent troubleshooting the virtualization problem, but the overall workflow was efficient thanks to Docker’s and AWS’s user-friendly tooling.
+My Fix:
+- I switched to running Ubuntu natively on my system.
+- Alternatively, I configured Docker Desktop with WSL (Windows Subsystem for Linux).
+Both approaches resolved the issue and allowed Docker to function normally.
 
 ## Key Takeaways
-- Docker provides a seamless way to package and deploy applications across environments.
-- Creating custom Docker images is straightforward with a basic understanding of Dockerfiles.
-- AWS Elastic Beanstalk offers an easy on-ramp to cloud deployment for Dockerized apps.
-- Infrastructure quirks (like nested virtualization) can present real challenges—but modern solutions like WSL can mitigate them.# 
+- Docker is incredibly effective for creating portable, consistent application environments.
+- Writing a basic Dockerfile and building custom images is surprisingly easy.
+- AWS Elastic Beanstalk streamlines container deployment without needing to manage infrastructure.
+- System limitations like virtualization support can slow progress but are often solvable with the right setup.
 
-
+## Conclusion
+This project demonstrated how modern tooling like Docker and AWS Elastic Beanstalk can simplify web application deployment. By containerizing the app, I was able to ensure consistency across environments. Deploying to the cloud was quick, reliable, and scalable—everything needed for modern app delivery, with minimal manual configuration.
