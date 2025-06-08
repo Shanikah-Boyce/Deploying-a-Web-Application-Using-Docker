@@ -1,6 +1,6 @@
 # Containerizing a Web Application with Docker and AWS Elastic Beanstalk
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e2a70a77-6977-4155-9dd2-df2f049bed5d">
+  <img src="https://github.com/user-attachments/assets/03e8fde8-daea-4a88-84c9-f9116cdcc386">
 </p>
 
 ## Project Overview
