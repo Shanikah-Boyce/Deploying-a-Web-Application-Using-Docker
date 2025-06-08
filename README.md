@@ -30,23 +30,12 @@ An existing container was already using port 80, so I stopped it using Docker De
 ![image](https://github.com/user-attachments/assets/8dab65f6-6b40-4df0-8a3c-f457820883e3)
 
 ## Taking It to the Cloud: AWS Elastic Beanstalk
-With the custom container working locally, I deployed it using AWS Elastic Beanstalk, a platform-as-a-service that automates infrastructure provisioning and deployment for containerized applications.
+With the custom container working locally, I deployed it using AWS Elastic Beanstalk, a service that simplifies setting up and managing containerized applications. It was a great choice because it supports Docker, adjusts resources automatically, and quickly gets apps ready for use. The deployment was simple; after uploading the Docker image, the platform took care of the rest, and within minutes, the app was live on the internet.
 
-What made Elastic Beanstalk ideal:
-- Built-in support for Docker containers
-- Automated provisioning and scaling
-- Fast setup for production environments
-
-Deployment was straightforward. After uploading the Docker image, the platform handled the rest. Within minutes, the app was live and accessible on the internet.
 ![image](https://github.com/user-attachments/assets/a32a5771-63ee-4842-a3cf-ca1e05561f32)
 
 ## Troubleshooting: Virtualization Woes
-One challenge I faced was nested virtualization. Running Docker inside a virtual machine caused KVM errors and made containers fail to start.
-
-My Fix:
-- I switched to running Ubuntu natively on my system.
-- Alternatively, I configured Docker Desktop with WSL (Windows Subsystem for Linux).
-Both approaches resolved the issue and allowed Docker to function normally.
+Running Docker Desktop in a virtual machine caused nested virtualization issues, leading to KVM errors that blocked installation. Switching to WSL (Windows Subsystem for Linux) resolved the problem but introduced security concerns due to its limited isolation compared to traditional VMs. To maintain a secure setup, regular updates, careful permission management and tools like Microsoft Defender for Endpoint and Intune are essential.
 
 ## Key Takeaways
 - Docker is incredibly effective for creating portable, consistent application environments.
