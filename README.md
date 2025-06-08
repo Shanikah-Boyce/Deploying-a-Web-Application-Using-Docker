@@ -7,12 +7,7 @@ AWS Elastic Beanstalk streamlined the cloud deployment process, making it easier
 ![image](https://github.com/user-attachments/assets/96f0ecb0-a4ca-4656-b371-e5d9cc42beec)
 
 
-Containers are lightweight, standalone software packages that include everything needed for an application to run, such as code, libraries, and tools. They are faster and more efficient than traditional virtual machines because they share the host system's kernel.
 
-Docker simplifies container management with several key components:
-- Docker Engine (daemon) – The background service that builds, runs, and manages containers.
-- Docker CLI & API – Command-line tools and programmatic interfaces for interacting with Docker.
-- Docker Desktop – A user-friendly GUI for managing containers, images, and volumes locally, especially useful for development and testing.
 
 
 ### Running a Prebuilt Nginx Container
