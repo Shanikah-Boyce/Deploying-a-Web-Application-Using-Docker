@@ -1,33 +1,30 @@
 # Containerizing a Web Application with Docker and AWS Elastic Beanstalk
 
 ## Project Overview
-This project involved containerizing a simple web application using Docker and deploying it to the cloud with AWS Elastic Beanstalk. 
-By creating a custom Dockerfile, the application's environment and dependencies were properly defined. A Docker image was then built and tested locally to ensure functionality before deployment. 
-AWS Elastic Beanstalk streamlined the cloud deployment process, making it easier to manage and scale the application. This approach aimed to ensure consistency, scalability, and ease of management across different environments, allowing for a seamless transition from local development to cloud servers.
+In this project, I set out to containerize a simple web application using Docker and deploy it to the cloud with AWS Elastic Beanstalk. The goal was to achieve a repeatable, scalable deployment process that moves seamlessly from local development to a live production environment.
 
-## Understanding Containers and Docker
-### Containers
-Containers are software units that package an application and its dependencies. They are useful because they ensure consistent behavior across environments, isolate the application, eliminate compatibility issues, and simplify deployment.
-A container image is a blueprint for creating containers, packaging everything needed to run an application.
+## Why Containers? Why Docker?
+Containers offer a way to package applications along with their dependencies so they behave the same in any environment (local, testing, or production). This level of consistency reduces bugs, eliminates "it works on my machine" problems, and simplifies deployment. Thus, Docker is a popular platform for building and managing containers. It allows developers to:
+- Run applications in isolated, lightweight environments
+- Define software environments with simple configuration files
+- Easily test and share containerized applications
 
-### Docker
-Docker is a platform for running applications in isolated containers with all their dependencies. Docker Desktop is a user-friendly application for managing these containers and images on your local computer through a graphical interface. The Docker daemon is the background engine that manages your Docker containers and images. It listens for Docker API requests and carries out the instructions to create, run, and manage containers. It's the core process that makes Docker work.
-
+## Containerization Workflow
 ### Running a Prebuilt Nginx Container
-To get started, I experimented with a basic Nginx container to understand Docker’s core functionality: `docker run -d -p 80:80 nginx`
-This command launched a Nginx server accessible via http://localhost, serving its default welcome page.
+To explore Docker, I began with a basic Nginx container: `docker run -d -p 80:80 nginx`. This started a local web server accessible via http://localhost, displaying the default Nginx welcome page.
 ![image](https://github.com/user-attachments/assets/58f55b3e-d8af-418a-98cd-de51c289bda6)
 
 ## Creating a Custom Docker Image
-Next, I built a custom Docker image using a Dockerfile to serve a personalized HTML page with Nginx.
-![image](https://github.com/user-attachments/assets/65f8c0e6-00b0-48c0-8e98-52722607f167)
+Next, I created a custom Dockerfile to serve a personalized HTML page through Nginx:
 
-A Dockerfile is essentially a set of instructions that guide Docker in assembling a container image. In this case, my Dockerfile included three essential steps:
-1) `FROM nginx:latest` - Uses the latest Nginx image as the foundation.
-2)	`COPY index.html ...` - Replaces the default homepage with my custom HTML file.
-3)	`EXPOSE 80`- Opens port 80 for external access.
+`FROM nginx: latest` - Uses the latest Nginx image as the foundation.
 
-To build the image, I executed: `docker build -t my-web-app .` The dot (.) at the end tells Docker to locate the Dockerfile in the current directory. As a result, a local image named my-web-app was successfully created and ready for deployment.
+`COPY index.html /usr/share/nginx/html/index.html` - Replaces the default homepage with my custom HTML file.
+
+`EXPOSE 80` - Opens port 80 for external access.
+
+I then built the image with: `docker build -t my-web-app .` The `.` tells Docker to look for the Dockerfile in the current directory. Once built, I ran: `docker run -d -p 80:80 my-web-app`.
+An existing container was already using port 80, so I stopped it using Docker Desktop. After that, my custom page loaded successfully in the browser:
 
 ## Running the Custom Image
 To run the image, I used:
