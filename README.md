@@ -1,4 +1,7 @@
 # Containerizing a Web Application with Docker and AWS Elastic Beanstalk
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e2a70a77-6977-4155-9dd2-df2f049bed5d">
+</p>
 
 ## Project Overview
 In this project, I set out to containerize a simple web application using Docker and deploy it to the cloud with AWS Elastic Beanstalk. The goal was to achieve a repeatable, scalable deployment process that moves seamlessly from local development to a live production environment.
