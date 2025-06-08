@@ -1,18 +1,12 @@
-# Deploying-a-Web-Application-Using-Docker
-## What is Docker?
-Docker is a powerful platform that simplifies application deployment by packaging software and its dependencies into lightweight, portable containers. These containers ensure consistency across various environments, from local development machines to cloud-based servers, making them an essential tool for modern software deployment.
-![image](https://github.com/user-attachments/assets/96f0ecb0-a4ca-4656-b371-e5d9cc42beec)
+# Containerizing a Web Application with Docker and AWS Elastic Beanstalk
 
 ## Project Overview
-In this project, I containerized a simple web application using Docker and deployed it to the cloud using AWS Elastic Beanstalk. The process involved:
-- Writing a custom Dockerfile
-- Building a Docker image
-- Running it locally
-- Deploying it to a cloud-based environment with minimal friction
+This project involved containerizing a simple web application using Docker and deploying it to the cloud with AWS Elastic Beanstalk. 
+By creating a custom Dockerfile, the application's environment and dependencies were properly defined. A Docker image was then built and tested locally to ensure functionality before deployment. 
+AWS Elastic Beanstalk streamlined the cloud deployment process, making it easier to manage and scale the application. This approach aimed to ensure consistency, scalability, and ease of management across different environments, allowing for a seamless transition from local development to cloud servers.
+![image](https://github.com/user-attachments/assets/96f0ecb0-a4ca-4656-b371-e5d9cc42beec)
 
-By leveraging Docker’s capabilities, I achieved a streamlined deployment pipeline that is both scalable and efficient.
 
-## Why Use Docker?
 Containers are lightweight, standalone software packages that include everything needed for an application to run, such as code, libraries, and tools. They are faster and more efficient than traditional virtual machines because they share the host system's kernel.
 
 Docker simplifies container management with several key components:
@@ -20,7 +14,7 @@ Docker simplifies container management with several key components:
 - Docker CLI & API – Command-line tools and programmatic interfaces for interacting with Docker.
 - Docker Desktop – A user-friendly GUI for managing containers, images, and volumes locally, especially useful for development and testing.
 
-## Project Breakdown
+
 ### Running a Prebuilt Nginx Container
 To get started, I experimented with a basic Nginx container to understand Docker’s core functionality: `docker run -d -p 80:80 nginx`
 This command launched a Nginx server accessible via http://localhost, serving its default welcome page.
@@ -65,6 +59,6 @@ I completed the core tasks of this project (containerization, local testing, and
 - Docker provides a seamless way to package and deploy applications across environments.
 - Creating custom Docker images is straightforward with a basic understanding of Dockerfiles.
 - AWS Elastic Beanstalk offers an easy on-ramp to cloud deployment for Dockerized apps.
-- Infrastructure quirks (like nested virtualization) can present real challenges—but modern solutions like WSL can mitigate them.
+- Infrastructure quirks (like nested virtualization) can present real challenges—but modern solutions like WSL can mitigate them.# 
 
 
