@@ -12,6 +12,7 @@ Containers offer a way to package applications along with their dependencies so 
 ## Containerization Workflow
 ### Running a Prebuilt Nginx Container
 To explore Docker, I began with a basic Nginx container: `docker run -d -p 80:80 nginx`. This started a local web server accessible via http://localhost, displaying the default Nginx welcome page.
+
 ![image](https://github.com/user-attachments/assets/58f55b3e-d8af-418a-98cd-de51c289bda6)
 
 ## Creating a Custom Docker Image
@@ -25,6 +26,7 @@ Next, I created a custom Dockerfile to serve a personalized HTML page through Ng
 
 I then built the image with: `docker build -t my-web-app .` The `.` tells Docker to look for the Dockerfile in the current directory. Once built, I ran: `docker run -d -p 80:80 my-web-app`.
 An existing container was already using port 80, so I stopped it using Docker Desktop. After that, my custom page loaded successfully in the browser:
+
 ![image](https://github.com/user-attachments/assets/8dab65f6-6b40-4df0-8a3c-f457820883e3)
 
 ## Taking It to the Cloud: AWS Elastic Beanstalk
