@@ -54,7 +54,7 @@ Within minutes, the app was live on the internet.
 ![image](https://github.com/user-attachments/assets/a32a5771-63ee-4842-a3cf-ca1e05561f32)
 
 ## Troubleshooting and Security Considerations
-Running Docker Desktop in a virtual machine caused nested virtualization issues, leading to KVM errors that blocked installation. Switching to WSL (Windows Subsystem for Linux) resolved the problem but introduced security concerns due to its limited isolation compared to traditional VMs. To maintain a secure setup, regular updates, careful permission management and tools like Microsoft Defender for Endpoint and Intune are essential.
+Running Docker Desktop in a virtual machine caused nested virtualization issues, leading to KVM errors that blocked installation. Switching to WSL (Windows Subsystem for Linux) resolved the problem but introduced security concerns since it shares more with my main computer than a full virtual machine. To maintain a secure setup, regular updates, careful permission management and tools like Microsoft Defender for Endpoint and Intune are essential to keep my computer and data safe.
 
 ## Conclusion
 By combining Docker’s containerization capabilities with AWS Elastic Beanstalk’s automated cloud management, this project successfully delivered a scalable, maintainable and efficient application infrastructure. The approach streamlined transitions between environments, making development, testing, and production workflows more seamless. 
