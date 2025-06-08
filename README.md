@@ -6,7 +6,7 @@
 ## Project Overview
 In this project, I set out to containerize a simple web application using Docker and deploy it to the cloud with AWS Elastic Beanstalk. The goal was to achieve a repeatable, scalable deployment process that moves seamlessly from local development to a live production environment.
 
-## Why Containers? Why Docker?
+#### Why Containers? Why Docker?
 Containers offer a way to package applications along with their dependencies so they behave the same in any environment (local, testing, or production). This level of consistency reduces bugs, eliminates "it works on my machine" problems, and simplifies deployment. 
 Thus, Docker is a popular platform for building and managing containers. It allows developers to:
 - Run applications in isolated, lightweight environments
