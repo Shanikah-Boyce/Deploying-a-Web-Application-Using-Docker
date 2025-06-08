@@ -4,11 +4,14 @@
 This project involved containerizing a simple web application using Docker and deploying it to the cloud with AWS Elastic Beanstalk. 
 By creating a custom Dockerfile, the application's environment and dependencies were properly defined. A Docker image was then built and tested locally to ensure functionality before deployment. 
 AWS Elastic Beanstalk streamlined the cloud deployment process, making it easier to manage and scale the application. This approach aimed to ensure consistency, scalability, and ease of management across different environments, allowing for a seamless transition from local development to cloud servers.
-![image](https://github.com/user-attachments/assets/96f0ecb0-a4ca-4656-b371-e5d9cc42beec)
 
+## Understanding Containers and Docker
+### Containers
+Containers are software units that package an application and its dependencies. They are useful because they ensure consistent behavior across environments, isolate the application, eliminate compatibility issues, and simplify deployment.
+A container image is a blueprint for creating containers, packaging everything needed to run an application.
 
-
-
+### Docker
+Docker is a platform for running applications in isolated containers with all their dependencies. Docker Desktop is a user-friendly application for managing these containers and images on your local computer through a graphical interface. The Docker daemon is the background engine that manages your Docker containers and images. It listens for Docker API requests and carries out the instructions to create, run, and manage containers. It's the core process that makes Docker work.
 
 ### Running a Prebuilt Nginx Container
 To get started, I experimented with a basic Nginx container to understand Docker’s core functionality: `docker run -d -p 80:80 nginx`
