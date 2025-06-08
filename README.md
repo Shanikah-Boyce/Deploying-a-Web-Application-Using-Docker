@@ -37,11 +37,5 @@ With the custom container working locally, I deployed it using AWS Elastic Beans
 ## Troubleshooting: Virtualization Woes
 Running Docker Desktop in a virtual machine caused nested virtualization issues, leading to KVM errors that blocked installation. Switching to WSL (Windows Subsystem for Linux) resolved the problem but introduced security concerns due to its limited isolation compared to traditional VMs. To maintain a secure setup, regular updates, careful permission management and tools like Microsoft Defender for Endpoint and Intune are essential.
 
-## Key Takeaways
-- Docker is incredibly effective for creating portable, consistent application environments.
-- Writing a basic Dockerfile and building custom images is surprisingly easy.
-- AWS Elastic Beanstalk streamlines container deployment without needing to manage infrastructure.
-- System limitations like virtualization support can slow progress but are often solvable with the right setup.
-
 ## Conclusion
-This project demonstrated how modern tooling like Docker and AWS Elastic Beanstalk can simplify web application deployment. By containerizing the app, I was able to ensure consistency across environments. Deploying to the cloud was quick, reliable, and scalable—everything needed for modern app delivery, with minimal manual configuration.
+By combining Docker’s containerization capabilities with AWS Elastic Beanstalk’s automated cloud management, this project successfully delivered a scalable, maintainable, and efficient application infrastructure. The approach streamlined transitions between environments, making development, testing, and production workflows more seamless. 
